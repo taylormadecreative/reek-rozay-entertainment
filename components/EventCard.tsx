@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import type { Event } from "@/data/events";
+import { BASE_PATH } from "@/data/constants";
 
 function isRealImage(src: string) {
   return !src.includes("placeholder");
@@ -41,7 +42,7 @@ export default function EventCard({
         <div className="relative aspect-[3/4] overflow-hidden">
           {isRealImage(event.flyerImage) ? (
             <Image
-              src={event.flyerImage}
+              src={`${BASE_PATH}${event.flyerImage}`}
               alt={event.flyerAlt}
               fill
               className="object-cover"
@@ -103,7 +104,7 @@ function FeaturedEventCard({ event }: { event: Event }) {
           <div className="relative aspect-[3/4] lg:aspect-auto min-h-[400px]">
             {isRealImage(event.flyerImage) ? (
               <Image
-                src={event.flyerImage}
+                src={`${BASE_PATH}${event.flyerImage}`}
                 alt={event.flyerAlt}
                 fill
                 className="object-cover"

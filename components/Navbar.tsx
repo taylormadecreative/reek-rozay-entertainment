@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { BASE_PATH } from "@/data/constants";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -55,7 +56,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="relative z-50 shrink-0">
             <Image
-              src="/images/logo.png"
+              src={`${BASE_PATH}/images/logo.png`}
               alt="Reek Rozay Entertainment"
               width={160}
               height={50}

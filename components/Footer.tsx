@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { BASE_PATH } from "@/data/constants";
 
 const footerLinks = [
   { href: "/", label: "Home" },
@@ -61,7 +62,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Image
-              src="/images/logo.png"
+              src={`${BASE_PATH}/images/logo.png`}
               alt="Reek Rozay Entertainment"
               width={180}
               height={56}
